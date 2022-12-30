@@ -9,8 +9,14 @@ import {
   FlatList,
 } from "react-native";
 
+
 const Cars = ({ navigation }) => {
+  const [counter, setCounter] = useState(0);
   const [Cars, setCars] = useState([]);
+
+  const increase = () => {
+    setCounter((currentCounter) => currentCounter + 1);
+}
 
   const getCars = async () => {
     try {
@@ -36,7 +42,7 @@ const Cars = ({ navigation }) => {
           style={styles.icon}
           source={require("../assets/shoppingCart.png")}
         />
-        <Text style={styles.shoppingCartAmount}>1</Text>
+        <Text style={styles.shoppingCartAmount}>{counter}</Text>
       </View>
       <FlatList
         style={styles.list}
@@ -61,7 +67,12 @@ const Cars = ({ navigation }) => {
                 })
               }
             >
-              <Text style={styles.bekijkBtn}>bekijk product</Text>
+              <View style={styles.buttonsContainer}>
+                <Text style={styles.bekijkBtn}>bekijk product</Text>
+                <Pressable onPress={(increase)}>
+                <Text style={styles.cartBtn}>Add to cart</Text>
+                </Pressable>
+              </View>
             </Pressable>
           </View>
         )}
@@ -91,7 +102,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     position: "absolute",
-    right: 20,
+    right: 32,
   },
   icon: {
     width: 25,
@@ -125,5 +136,14 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     marginTop: 5,
     marginLeft: 25,
+    marginRight: 138,
+  },
+  buttonsContainer: {
+    display: "flex",
+    flexDirection: "row",
+  },
+  cartBtn: {
+    color: "#ffffff",
+    marginTop: 5,
   }
 });
