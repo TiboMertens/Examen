@@ -48,6 +48,8 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   author: {
-    color: "#ffffff"
-  }
+    color: "#ffffff",
+    marginTop: 5,
+    fontWeight: "600",
+  },
 });
