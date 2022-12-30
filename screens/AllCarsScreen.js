@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
     height: 200,
     marginLeft: "auto",
     marginRight: "auto",
+    borderRadius: 3,
   },
   shoppingCartAmount: {
     marginTop: 37,
