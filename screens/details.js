@@ -15,7 +15,8 @@ const Details = ({ navigation, route }) => {
     <View>
       <Detail title={route.params.itemTitle}
       description={route.params.itemDesc}
-      image={route.params.itemImage} />
+      image={route.params.itemImage} 
+      author={route.params.itemAuthor} />
     </View>
   );
 };
