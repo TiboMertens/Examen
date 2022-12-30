@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
-  Stylesheet,
+  StyleSheet,
   Text,
   View,
   Image,
@@ -30,24 +30,27 @@ const Cars = ({ navigation }) => {
   }, []);
 
   return (
-    <View>
+    <View style={styles.container}>
+      <View style={styles.shoppingCart}>
+        <Image
+          style={styles.icon}
+          source={require("../assets/shoppingCart.png")}
+        />
+        <Text style={styles.shoppingCartAmount}>1</Text>
+      </View>
       <FlatList
+        style={styles.list}
         data={Cars}
         renderItem={({ item }) => (
-          <View>
-            <Text>
-              {item.yoast_head_json?.og_image !== undefined && (
-                <Image
-                  style={{ width: 420, height: 200 }}
-                  source={{ uri: `${item.yoast_head_json.og_image[0].url}` }}
-                />
-              )}
-              <Text>
-              {"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}
-                {item.title.rendered} {"\n"}{" "}
-              </Text>
-             
-            </Text>
+          <View style={styles.carsContainer}>
+            {item.yoast_head_json?.og_image !== undefined && (
+              <Image
+                style={styles.image}
+                source={{ uri: `${item.yoast_head_json.og_image[0].url}` }}
+              />
+            )}
+            <Text style={styles.carTitle}>{item.title.rendered}</Text>
+
             <Pressable
               onPress={() =>
                 navigation.navigate("Details", {
@@ -58,7 +61,7 @@ const Cars = ({ navigation }) => {
                 })
               }
             >
-              <Text>bekijk product</Text>
+              <Text style={styles.bekijkBtn}>bekijk product</Text>
             </Pressable>
           </View>
         )}
@@ -68,3 +71,58 @@ const Cars = ({ navigation }) => {
 };
 
 export default Cars;
+
+const styles = StyleSheet.create({
+  image: {
+    width: 300,
+    height: 200,
+    marginLeft: "auto",
+    marginRight: "auto",
+  },
+  shoppingCartAmount: {
+    marginTop: 37,
+    marginLeft: 2,
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#ffffff",
+  },
+  shoppingCart: {
+    display: "flex",
+    flexDirection: "row",
+    position: "absolute",
+    right: 20,
+  },
+  icon: {
+    width: 25,
+    height: 25,
+    marginTop: 20,
+  },
+  list: {
+    marginTop: 75,
+  },
+  carsContainer: {
+    width: 350,
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginBottom: 50,
+    paddingTop: 25,
+    paddingBottom: 25,
+    backgroundColor: "#545454",
+    borderRadius: 10,
+  },
+  container: {
+    backgroundColor: "#353935",
+  },
+  carTitle: {
+    color: "#ffffff",
+    fontSize: 20,
+    marginLeft: 25,
+    fontWeight: "bold",
+  },
+  bekijkBtn: {
+    color: "#61CE70",
+    fontWeight: "700",
+    marginTop: 5,
+    marginLeft: 25,
+  }
+});
