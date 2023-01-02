@@ -3,12 +3,12 @@ import React from 'react'
 
 import ShoppingCart from '../components/shoppingCart'
 
-const shoppingCartScreen = () => {
+const ShoppingCartScreen = () => {
   return (
     <ShoppingCart />
   )
 }
 
-export default shoppingCartScreen
+export default ShoppingCartScreen
 
 const styles = StyleSheet.create({})
