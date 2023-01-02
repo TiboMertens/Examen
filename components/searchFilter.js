@@ -10,13 +10,6 @@ import {
 } from "react-native";
 import React, { useState, useEffect } from "react";
 
-items = [
-  {
-    title: "Tibo",
-    desc: "desc",
-  },
-];
-
 const searchFilter = ({ navigation, data, input, setInput }) => {
   const [counter, setCounter] = useState(0);
 

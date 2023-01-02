@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-import ShoppingCart from '../components/shoppingCart'
-
-const ShoppingCartScreen = () => {
+const shoppingCartScreen = () => {
   return (
-    <ShoppingCart />
+    <View>
+      <Text>shoppingCartScreen</Text>
+    </View>
   )
 }
 
-export default ShoppingCartScreen
+export default shoppingCartScreen
 
 const styles = StyleSheet.create({})

@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import AllCarsScreen from './screens/AllCarsScreen';
 import Details from './screens/details';
-import ShoppingCartScreen from './screens/ShoppingCartScreen';
+import ShoppingCartScreen from './screens/ShoppingCartScreen.js';
 
 const Stack = createNativeStackNavigator();
 
