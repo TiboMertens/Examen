@@ -6,28 +6,44 @@ import {
   TextInput,
   Image,
   Pressable,
+  TabBarIOSItem,
 } from "react-native";
 import React, { useState, useEffect } from "react";
 
+items = [
+  {
+    title: "Tibo",
+    desc: "desc",
+  },
+];
+
 const searchFilter = ({ navigation, data, input, setInput }) => {
   const [counter, setCounter] = useState(0);
-  console.log(input)
+
   const increase = () => {
     setCounter((currentCounter) => currentCounter + 1);
   };
 
   return (
     <View>
-      <View style={styles.shoppingCart}>
-        <Image
-          style={styles.icon}
-          source={require("../assets/shoppingCart.png")}
-        />
-        <Text style={styles.shoppingCartAmount}>{counter}</Text>
-      </View>
+      <Pressable
+        onPress={() =>
+          navigation.navigate("ShoppingCart", {
+          })
+        }
+      >
+        <View style={styles.shoppingCart}>
+          <Image
+            style={styles.icon}
+            source={require("../assets/shoppingCart.png")}
+          />
+          <Text style={styles.shoppingCartAmount}>{counter}</Text>
+        </View>
+      </Pressable>
+
       <FlatList
         style={styles.list}
-        ListFooterComponent={<View style={{height: 300}}></View>}
+        ListFooterComponent={<View style={{ height: 300 }}></View>}
         data={data}
         renderItem={({ item }) => {
           if (input === "") {
@@ -68,7 +84,7 @@ const searchFilter = ({ navigation, data, input, setInput }) => {
 
           if (item.title.rendered.toLowerCase().includes(input.toLowerCase())) {
             return (
-                <View style={styles.Container}>
+              <View style={styles.Container}>
                 <View style={styles.carsContainer}>
                   {item.yoast_head_json?.og_image !== undefined && (
                     <Image

@@ -3,11 +3,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import AllCarsScreen from './screens/AllCarsScreen';
 import Details from './screens/details';
+import shoppingCartScreen from './screens/shoppingCartScreen';
 
 const Stack = createNativeStackNavigator();
-
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
@@ -16,6 +14,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Cars" component={AllCarsScreen} />
         <Stack.Screen name="Details" component={Details} />  
+        <Stack.Screen name="ShoppingCart" component={shoppingCartScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
