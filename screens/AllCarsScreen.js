@@ -12,7 +12,6 @@ import {
 import SearchFilter from "../components/searchFilter";
 
 const Cars = ({ navigation }) => {
-  const [counter, setCounter] = useState(0);
   const [Cars, setCars] = useState([]);
 
   const getCars = async () => {
