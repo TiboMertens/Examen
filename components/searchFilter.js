@@ -27,6 +27,7 @@ const searchFilter = ({ navigation, data, input, setInput }) => {
       </View>
       <FlatList
         style={styles.list}
+        ListFooterComponent={<View style={{height: 300}}></View>}
         data={data}
         renderItem={({ item }) => {
           if (input === "") {
