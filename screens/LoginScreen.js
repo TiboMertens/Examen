@@ -65,11 +65,9 @@ const LoginScreen = ({ navigation }) => {
           value={inputPassword}
           onChangeText={(textPassword) => setInputPassword(textPassword)}
         />
-        <Pressable>
           <TouchableOpacity style={styles.btn} onPress={() => checkForm()}>
             <Text style={styles.btnText}>Login</Text>
           </TouchableOpacity>
-        </Pressable>
       </View>
     </KeyboardAvoidingView>
   );
