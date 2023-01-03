@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import React, { useState, useEffect } from "react";
 
-const searchFilter = ({ navigation, data, input, setInput }) => {
+const searchFilter = ({ data, input, setInput, navigation }) => {
   const [counter, setCounter] = useState(0);
 
   const increase = () => {
@@ -19,12 +19,7 @@ const searchFilter = ({ navigation, data, input, setInput }) => {
 
   return (
     <View>
-      <Pressable
-        onPress={() =>
-          navigation.navigate("ShoppingCart", {
-          })
-        }
-      >
+      <Pressable>
         <View style={styles.shoppingCart}>
           <Image
             style={styles.icon}
@@ -36,7 +31,7 @@ const searchFilter = ({ navigation, data, input, setInput }) => {
 
       <FlatList
         style={styles.list}
-        ListFooterComponent={<View style={{ height: 300 }}></View>}
+        ListFooterComponent={<View style={{ height: 310 }}></View>}
         data={data}
         renderItem={({ item }) => {
           if (input === "") {
@@ -50,7 +45,7 @@ const searchFilter = ({ navigation, data, input, setInput }) => {
                         uri: `${item.yoast_head_json.og_image[0].url}`,
                       }}
                     />
-                  )}
+                  )} 
                   <Text style={styles.carTitle}>{item.title.rendered}</Text>
 
                   <Pressable
