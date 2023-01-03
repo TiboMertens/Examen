@@ -7,15 +7,37 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
   Alert,
+  Pressable,
 } from "react-native";
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 const LoginScreen = ({ navigation }) => {
-    const [inputEmail, setInputEmail] = useState("");
+  const [inputEmail, setInputEmail] = useState("");
+  const [inputPassword, setInputPassword] = useState("");
 
-    const checkEmail = () => {
-        console.log("ho")
+  const checkForm = () => {
+    if (!inputEmail.includes("@")) {
+      Alert.alert("Invalid email", "Please check if there is an '@' present", [
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel preessed"),
+          style: "cancel",
+        },
+        { text: "OK", onPress: () => console.log("OK pressed") },
+      ]);
+    } else if (inputPassword !== "examen") {
+      Alert.alert("Invalid Password", "Tip: lees de STIJNREADME.txt file", [
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel preessed"),
+          style: "cancel",
+        },
+        { text: "OK", onPress: () => console.log("OK pressed") },
+      ]);
+    } else {
+      navigation.navigate("Cars");
     }
+  };
 
   return (
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
@@ -40,13 +62,14 @@ const LoginScreen = ({ navigation }) => {
           secureTextEntry
           autoCapitalize="none"
           autoCorrect={false}
+          value={inputPassword}
+          onChangeText={(textPassword) => setInputPassword(textPassword)}
         />
-        <TouchableOpacity
-          style={styles.btn}
-          onPress={() => navigation.navigate("Cars")}
-        >
-          <Text style={styles.btnText} onPress={() => checkEmail()}>Login</Text>
-        </TouchableOpacity>
+        <Pressable>
+          <TouchableOpacity style={styles.btn} onPress={() => checkForm()}>
+            <Text style={styles.btnText}>Login</Text>
+          </TouchableOpacity>
+        </Pressable>
       </View>
     </KeyboardAvoidingView>
   );
