@@ -42,6 +42,7 @@ const Cars = ({ navigation }) => {
           placeholder="Search"
         />
       </View>
+
       <SearchFilter data={Cars} input={input} setInput={setInput} navigation={navigation} />
     </View>
   );

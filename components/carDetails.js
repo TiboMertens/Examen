@@ -11,7 +11,7 @@ import {
 
 const Detail = (props) => {
   return (
-    <View style={styles.container}>
+    <View>
       <Image
         style={{ width: 420, height: 200 }}
         source={{ uri: `${props.image}` }}
