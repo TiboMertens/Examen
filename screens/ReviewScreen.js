@@ -6,6 +6,7 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
+  KeyboardAvoidingView,
 } from "react-native";
 import React, { useState, useEffect } from "react";
 
@@ -89,23 +90,22 @@ const ReviewScreen = () => {
           onChangeText={newNameHandler}
         />
 
-        <TouchableOpacity
-          style={styles.btn}
-          onPress={() => addReviewHandler()}
-        >
+        <TouchableOpacity style={styles.btn} onPress={() => addReviewHandler()}>
           <Text style={styles.btnText}>Post review</Text>
         </TouchableOpacity>
       </View>
       <FlatList
+        style={{ height: 350, marginTop: 25 }}
         data={reviews}
         renderItem={({ item }) => (
-            <View style={styles.reviewContainer}>
-              <Text style={styles.reviewTitle}>{item.title}</Text>
-              <Text style={styles.review}>{item.review}</Text>
-              <Text style={styles.reviewName}>- {item.name}</Text>
-            </View>
+          <View style={styles.reviewContainer}>
+            <Text style={styles.reviewTitle}>{item.title}</Text>
+            <Text style={styles.review}>{item.review}</Text>
+            <Text style={styles.reviewName}>- {item.name}</Text>
+          </View>
         )}
-      /> 
+      />
+      <Text style={styles.a}>hey</Text>
     </View>
   );
 };
@@ -113,9 +113,9 @@ const ReviewScreen = () => {
 export default ReviewScreen;
 
 const styles = StyleSheet.create({
-  // flatListContainer: {
-  //   marginBottom: 81,
-  // },
+  flatListContainer: {
+    backgroundColor: "#353935",
+  },
   container: {
     backgroundColor: "#353935",
   },
@@ -201,5 +201,8 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     fontWeight: "bold",
     fontSize: 18,
+  },
+  a: {
+    color: "#353935",
   },
 });
