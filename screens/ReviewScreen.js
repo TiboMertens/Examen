@@ -11,10 +11,6 @@ import {
 import React, { useState, useEffect } from "react";
 
 const ReviewScreen = () => {
-  const [inputTitle, setInputTitle] = useState("");
-  const [inputReview, setInputReview] = useState("");
-  const [inputName, setInputName] = useState("");
-
   let existingReviews = [
     {
       title: "I love F1",
@@ -81,6 +77,8 @@ const ReviewScreen = () => {
           placeholder="Your review"
           clearButtonMode="always"
           onChangeText={newReviewHandler}
+          multiline
+          numberOfLines={7}
         />
 
         <TextInput
@@ -173,7 +171,7 @@ const styles = StyleSheet.create({
     marginLeft: 25,
     marginRight: 25,
     paddingTop: 5,
-    paddingBottom: 70,
+    paddingBottom: 5,
     paddingLeft: 10,
     borderRadius: 4,
     marginBottom: 20,
