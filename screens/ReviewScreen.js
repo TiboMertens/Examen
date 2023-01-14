@@ -91,7 +91,7 @@ const ReviewScreen = () => {
         </TouchableOpacity>
       </View>
       <FlatList
-        style={{ height: 350, marginTop: 25 }}
+        style={{ height: 325, marginTop: 25 }}
         data={reviews}
         renderItem={({ item }) => (
           <View style={styles.reviewContainer}>
