@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
   Alert,
-  Pressable,
 } from "react-native";
 import React, { useState } from "react";
 
@@ -65,9 +64,9 @@ const LoginScreen = ({ navigation }) => {
           value={inputPassword}
           onChangeText={(textPassword) => setInputPassword(textPassword)}
         />
-          <TouchableOpacity style={styles.btn} onPress={() => checkForm()}>
-            <Text style={styles.btnText}>Login</Text>
-          </TouchableOpacity>
+        <TouchableOpacity style={styles.btn} onPress={() => checkForm()}>
+          <Text style={styles.btnText}>Login</Text>
+        </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
   );

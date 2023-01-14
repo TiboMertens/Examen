@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TextInput,
-  Pressable,
-  FlatList,
-} from "react-native";
+import { StyleSheet, View, TextInput } from "react-native";
 
 import SearchFilter from "../components/searchFilter";
 
@@ -43,7 +35,7 @@ const Cars = ({ navigation }) => {
         />
       </View>
 
-      <SearchFilter data={Cars} input={input} setInput={setInput} navigation={navigation} />
+      <SearchFilter data={Cars} input={input} navigation={navigation} />
     </View>
   );
 };
@@ -52,7 +44,7 @@ export default Cars;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#353935"
+    backgroundColor: "#353935",
   },
   searchContainer: {
     backgroundColor: "#Eaf0f3",

@@ -3,14 +3,12 @@ import {
   Text,
   View,
   FlatList,
-  TextInput,
   Image,
   Pressable,
-  TabBarIOSItem,
 } from "react-native";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-const searchFilter = ({ data, input, setInput, navigation }) => {
+const searchFilter = ({ data, input, navigation }) => {
   const [counter, setCounter] = useState(0);
 
   const increase = () => {
@@ -19,7 +17,7 @@ const searchFilter = ({ data, input, setInput, navigation }) => {
 
   return (
     <View>
-      <Pressable>
+      <View>
         <View style={styles.shoppingCart}>
           <Image
             style={styles.icon}
@@ -27,7 +25,7 @@ const searchFilter = ({ data, input, setInput, navigation }) => {
           />
           <Text style={styles.shoppingCartAmount}>{counter}</Text>
         </View>
-      </Pressable>
+      </View>
 
       <FlatList
         style={styles.list}
@@ -45,7 +43,7 @@ const searchFilter = ({ data, input, setInput, navigation }) => {
                         uri: `${item.yoast_head_json.og_image[0].url}`,
                       }}
                     />
-                  )} 
+                  )}
                   <Text style={styles.carTitle}>{item.title.rendered}</Text>
 
                   <Pressable

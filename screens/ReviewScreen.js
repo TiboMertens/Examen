@@ -5,10 +5,8 @@ import {
   View,
   TextInput,
   TouchableOpacity,
-  ScrollView,
-  KeyboardAvoidingView,
 } from "react-native";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const ReviewScreen = () => {
   let existingReviews = [
